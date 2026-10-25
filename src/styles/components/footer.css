@@ -1,0 +1,47 @@
+/* .footer — pie de página */
+
+.footer {
+  margin-top: 8rem; /* mt-32 */
+  padding-bottom: 2rem; /* pb-8 */
+}
+
+.footer__columns {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* gap-10 */
+}
+
+.footer__col {
+  flex: 1;
+  text-align: center;
+}
+
+.footer__heading {
+  margin-bottom: 1.25rem; /* mb-5 */
+}
+
+.footer__meta {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer__lang {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer__columns {
+    flex-direction: row;
+  }
+
+  .footer__col {
+    text-align: left;
+  }
+
+  .footer__col--right {
+    text-align: right;
+  }
+}
+

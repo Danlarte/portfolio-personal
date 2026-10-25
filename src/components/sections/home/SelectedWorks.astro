@@ -1,0 +1,43 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import Work from "../../elements/Work.astro";
+import Link from "../../elements/Link.astro";
+import "../../../styles/components/sections-home.css";
+
+// i18n
+import { getLang, dict, localizePath } from "../../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+// content collections
+import { getCollection } from "astro:content";
+const works = await getCollection("works", (work) =>
+    !work.data.isDraft && work.id.startsWith(`${lang}/`)
+);
+const featuredWorks = works.filter(work => work.data.isFeatured === true);
+
+const order = ["Plutonia", "yoko-beauty", "ruaj-vajilla-antigua", "pueblo-nativo"];
+featuredWorks.sort((a, b) => order.indexOf(a.data.slug) - order.indexOf(b.data.slug));
+---
+
+<Container variant={'lg'} class="selected-works">
+    <Heading tagName="h2" tagSize="h2" class="heading--center heading--acknowledgement">
+        {tr.home.featured.heading}
+    </Heading>
+    <div class="works-grid">
+        {featuredWorks.map((work) => (
+            <Work
+                slug={work.data.slug}
+                title={work.data.title}
+                client={work.data.client}
+                category={work.data.category}
+                year={work.data.year}>
+            </Work>
+        ))
+        }
+    </div>
+    <Link variant={'button'} href={localizePath(lang, "/works")}>{tr.common.allWorks}</Link>
+</Container>

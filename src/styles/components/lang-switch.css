@@ -1,0 +1,41 @@
+/* .lang-switch — selector de idioma ES / EN */
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lang-switch__link {
+  font-family: var(--font-gotham);
+  font-size: var(--text-16);
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: transparent;
+  color: var(--color-base-900);
+  opacity: 0.6;
+  transition:
+    opacity 0.15s ease,
+    text-decoration-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.lang-switch__link:hover,
+.lang-switch__link--active {
+  opacity: 1;
+  text-decoration-color: currentColor;
+}
+
+.lang-switch__link:hover {
+  color: var(--color-base-700);
+}
+
+@media (min-width: 768px) {
+  .lang-switch__link {
+    font-size: var(--text-24);
+  }
+}

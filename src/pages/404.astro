@@ -1,0 +1,26 @@
+---
+// Root 404 (served by the host as /404.html). Forwards to the localized
+// 404 page based on the language cookie or the browser language.
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="noindex" />
+		<title>Página no encontrada</title>
+		<script is:inline>
+			(function () {
+				var match = document.cookie.match(/(?:^|;\s*)lang=([^;]+)/);
+				var stored = match ? decodeURIComponent(match[1]) : null;
+				var nav = (navigator.language || "es").toLowerCase();
+				var lang = stored || (nav.indexOf("en") === 0 ? "en" : "es");
+				if (lang !== "es" && lang !== "en") lang = "es";
+				location.replace("/" + lang + "/404/");
+			})();
+		</script>
+		<noscript><meta http-equiv="refresh" content="0;url=/es/404/" /></noscript>
+	</head>
+	<body></body>
+</html>

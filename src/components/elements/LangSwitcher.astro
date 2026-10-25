@@ -1,0 +1,32 @@
+---
+// components
+import "../../styles/components/lang-switch.css";
+
+// i18n
+import { LOCALES, LOCALE_META, getLang, localizePath, stripLang, type Lang } from "../../i18n/utils";
+
+// props
+const { class: className } = Astro.props;
+
+const lang = getLang(Astro.url.pathname);
+const currentPath = stripLang(Astro.url.pathname);
+
+const shortLabels: Record<Lang, string> = { es: "ES", en: "EN" };
+---
+
+<div class:list={["lang-switch", className]}>
+    {
+        LOCALES.map((alternateLang) => (
+            <a
+                href={localizePath(alternateLang, currentPath)}
+                class:list={["lang-switch__link", alternateLang === lang && "lang-switch__link--active"]}
+                hreflang={alternateLang}
+                lang={alternateLang}
+                aria-label={LOCALE_META[alternateLang].label}
+                aria-current={alternateLang === lang ? "true" : undefined}
+            >
+                {shortLabels[alternateLang]}
+            </a>
+        ))
+    }
+</div>

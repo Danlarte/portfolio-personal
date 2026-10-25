@@ -1,0 +1,198 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "works": "Trabajos",
+        "about": "Sobre mí",
+        "contact": "Contacto",
+        "openNav": "Abrir navegación",
+        "closeNav": "Cerrar navegación"
+    },
+    "footer": {
+        "socials": "Redes",
+        "navigation": "Navegación",
+        "rights": "Daniel Lazarte © 2025 Todos los derechos reservados",
+        "builtWith": "Construido con",
+        "by": "por"
+    },
+    "common": {
+        "allWorks": "Todos los trabajos",
+        "moreAboutMe": "Más sobre mí",
+        "openToWork": "Open to work",
+        "liveSite": "Sitio en vivo",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "goHome": "Volver al inicio"
+    },
+    "home": {
+        "meta": {
+            "title": "Inicio",
+            "description": "Portafolio con estética grunge."
+        },
+        "hero": {
+            "label": "Portafolio",
+            "intro": "Entre píxeles, discos y otras obsesiones. Una identidad visual inspirada en la música, los objetos digitales y análogicos más la cultura gráfica de ese universo que me acompaña desde siempre.",
+            "imageAlt": "Daniel Lazarte"
+        },
+        "featured": {
+            "heading": "Proyectos recientes"
+        },
+        "services": {
+            "heading": "Servicios",
+            "items": [
+                {
+                    "title": "Desarrollo WordPress",
+                    "text": "Desarrollo y personalización de sitios WordPress mediante PHP, JavaScript, temas a medida, temas hijo, campos personalizados e integración de APIs. Experiencia con Elementor Pro, Astra y soluciones adaptadas a las necesidades de cada proyecto."
+                },
+                {
+                    "title": "WooCommerce y E-commerce",
+                    "text": "Implementación y personalización de tiendas online con WooCommerce. Desarrollo de interfaces de compra, organización de catálogos, integración de funcionalidades y optimización de la experiencia de usuario."
+                },
+                {
+                    "title": "Front-End y Creative Development",
+                    "text": "Desarrollo de interfaces responsive y experiencias web interactivas con HTML, CSS, JavaScript, React y Astro. Animaciones con GSAP y ScrollTrigger, combinando narrativa visual, interacción y rendimiento."
+                },
+                {
+                    "title": "Diseño UI y Rendimiento Web",
+                    "text": "Diseño de interfaces con atención a la jerarquía visual, usabilidad y consistencia gráfica. Diagnóstico técnico, optimización de velocidad, mantenimiento y resolución de incidencias en sitios web."
+                }
+            ]
+        },
+        "about": {
+            "heading": "Trayectoria",
+            "p1": "Soy desarrollador WordPress, Front-End Developer y diseñador gráfico, con más de cinco años de experiencia creando sitios web, tiendas online y experiencias digitales.",
+            "p2": "Mi trabajo combina diseño y programación. Me especializo en WordPress, WooCommerce, PHP y JavaScript, desarrollando soluciones personalizadas que van desde sitios corporativos y plataformas de comercio electrónico hasta interfaces interactivas con Astro, React y GSAP.",
+            "p3": "Mi formación en diseño gráfico me permite abordar cada proyecto desde una perspectiva visual y técnica. Me interesa comprender cómo funciona cada sistema, resolver problemas y encontrar el equilibrio entre estética, usabilidad y rendimiento. Actualmente busco oportunidades para aportar mi experiencia y seguir creciendo dentro de un equipo de desarrollo.",
+            "imageAlt": "Daniel Lazarte"
+        },
+        "faq": {
+            "heading": "FAQ",
+            "items": [
+                {
+                    "title": "¿Cuál es tu especialidad principal?",
+                    "text": "Mi especialidad es el desarrollo con WordPress y WooCommerce. Trabajo con PHP, JavaScript, temas personalizados, campos personalizados e integraciones de APIs. También desarrollo interfaces con Astro y React, combinando programación, diseño gráfico y experiencia de usuario."
+                },
+                {
+                    "title": "¿Qué experiencia profesional tenés?",
+                    "text": "Tengo más de cinco años de experiencia desarrollando sitios web y tiendas online. Trabajé de manera independiente y en entornos de producción para agencias, participando en proyectos con WordPress, Elementor y WooCommerce, desde su implementación hasta el mantenimiento y la optimización."
+                },
+                {
+                    "title": "¿Cómo abordás un proyecto de desarrollo?",
+                    "text": "Primero busco comprender los objetivos, las necesidades y los requisitos del proyecto. A partir de eso, defino una solución técnica, organizo el trabajo y desarrollo las funcionalidades necesarias. Durante el proceso realizo pruebas, resuelvo incidencias y presto especial atención a la usabilidad, el rendimiento y la calidad del código."
+                },
+                {
+                    "title": "¿Podés trabajar de forma remota con equipos internacionales?",
+                    "text": "Sí. Estoy ubicado en Argentina y busco oportunidades laborales 100 % remotas. Puedo colaborar de manera asincrónica, documentar mi trabajo y coordinar horarios con equipos de otros países. Mi idioma principal es el español y tengo un nivel intermedio de inglés, especialmente para comunicación escrita y documentación técnica."
+                },
+                {
+                    "title": "¿Qué tipo de oportunidades estás buscando?",
+                    "text": "Me interesan posiciones como WordPress Developer, WooCommerce Developer y Front-End Developer. Busco integrarme a un equipo donde pueda aportar mi experiencia en desarrollo web, mantenimiento y resolución de problemas, mientras continúo creciendo profesionalmente y aprendiendo nuevas tecnologías."
+                }
+            ]
+        }
+    },
+    "about": {
+        "meta": {
+            "title": "Sobre mí",
+            "description": "Experiencia, formación y perfil profesional de Daniel Lazarte."
+        },
+        "intro": {
+            "p1": "Me interesa todo lo que sucede cuando el diseño, la tecnología y la creatividad se encuentran. Vengo del diseño gráfico, trabajo desarrollando experiencias web y disfruto tanto de construir una interfaz como de entender qué sucede detrás de ella.",
+            "p2": "La música, el cine, la historia y los cuentos ocupan buena parte de mi curiosidad. Me atraen las ideas que desafían lo convencional, las distintas maneras de contar historias y descubrir nuevas formas de expresión. También disfruto salir a correr: una buena manera de despejar la cabeza, ordenar ideas y volver con otra perspectiva.",
+            "imageAlt": "Daniel Lazarte"
+        },
+        "experience": {
+            "heading": "Experiencia",
+            "items": [
+                {
+                    "title": "WordPress & Front-End Developer",
+                    "place": "Studio Glick",
+                    "period": "2019 - Actualidad",
+                    "text": "Diseño y desarrollo sitios web, tiendas online y experiencias digitales personalizadas con WordPress, WooCommerce, PHP y JavaScript. Trabajo con temas a medida, integraciones de APIs, campos personalizados y optimización de rendimiento. También desarrollo interfaces con Astro, React y GSAP, combinando programación, diseño visual y experiencia de usuario."
+                },
+                {
+                    "title": "WordPress Developer",
+                    "place": "GRANT SOLUTIONS",
+                    "period": "Abril - Agosto 2025",
+                    "text": "Desarrollo e implementación de sitios web para el programa Kit Digital de España, utilizando WordPress Multisite y Elementor. Adaptación de plantillas, personalización de diseños, gestión de contenidos y publicación de sitios en un entorno de producción de alto volumen, siguiendo procesos de trabajo y plazos de entrega definidos."
+                },
+                {
+                    "title": "Diseñador Gráfico y Creativo Digital",
+                    "place": "PROFESIONAL INDEPENDIENTE",
+                    "period": "2019 - Actualidad",
+                    "text": "Desarrollo de identidades visuales, piezas gráficas e interfaces digitales para diferentes marcas y proyectos. Mi trabajo abarca branding, dirección de arte, diseño UI y comunicación visual, integrando criterios estéticos y funcionales para construir experiencias digitales coherentes."
+                },
+                {
+                    "title": "Atención al Cliente y Soporte B2B",
+                    "place": "CHASMA TOURS · INDUSTRIA TURÍSTICA",
+                    "period": "2015 - 2019",
+                    "text": "Atención y soporte a agencias de viajes en un entorno B2B. Gestión de consultas, resolución de incidencias, coordinación de servicios y seguimiento de solicitudes. Esta experiencia fortaleció mis habilidades de comunicación, organización, resolución de problemas y atención al cliente, aplicables también al soporte de productos y plataformas digitales."
+                }
+            ]
+        },
+        "education": {
+            "heading": "Educación",
+            "items": [
+                {
+                    "title": "Tecnicatura en Programación",
+                    "place": "UNIVERSIDAD TECNOLÓGICA NACIONAL (UTN) · CÓRDOBA",
+                    "period": "2018 - 2020",
+                    "text": "Formación en programación y fundamentos del desarrollo de software, incluyendo lógica de programación, algoritmos, bases de datos y resolución de problemas. Una base técnica que complementa mi experiencia profesional en desarrollo web y programación Front-End."
+                },
+                {
+                    "title": "Tecnicatura Superior en Diseño Gráfico y Publicitario",
+                    "place": "UNIVERSIDAD PROVINCIAL DE CÓRDOBA (UPC)",
+                    "period": "2014 - 2017",
+                    "text": "Formación en comunicación visual, diseño gráfico, tipografía, composición e identidad de marca. Estos conocimientos constituyen la base de mi enfoque creativo y me permiten integrar criterios de diseño, usabilidad y comunicación visual en el desarrollo de experiencias digitales."
+                }
+            ]
+        }
+    },
+    "contact": {
+        "meta": {
+            "title": "Contacto",
+            "description": "Ponte en contacto conmigo para proyectos y oportunidades laborales."
+        },
+        "heading": "Contacto",
+        "intro": {
+            "p1": "¿Trabajamos juntos?",
+            "p2": "Me interesa conectar con personas y equipos que disfruten crear, experimentar y resolver problemas a través del diseño y la tecnología.",
+            "p3": "Actualmente estoy abierto a oportunidades laborales remotas como WordPress Developer o Front-End Developer, desde Argentina."
+        },
+        "email": "Email",
+        "phone": "Teléfono"
+    },
+    "works": {
+        "meta": {
+            "title": "Trabajos",
+            "description": "Trabajos y proyectos seleccionados."
+        },
+        "heading": "Trabajos",
+        "detail": {
+            "titlePrefix": "Proyecto",
+            "ariaLabel": "Detalles del proyecto",
+            "client": "Cliente",
+            "category": "Categoría",
+            "services": "Servicios",
+            "year": "Año"
+        }
+    },
+    "notFound": {
+        "meta": {
+            "title": "Página no encontrada",
+            "description": "La página que buscás no existe."
+        },
+        "heading": "Página no encontrada",
+        "text": "¡Ups! Parece que la página que intentás acceder está rota o no existe.",
+        "button": "Volver al inicio"
+    },
+    "categories": {
+        "ui-ux-design": "Diseño UI/UX",
+        "web-design": "Diseño Web",
+        "art-direction": "Dirección de Arte",
+        "product-design": "Diseño de Producto",
+        "branding": "Branding",
+        "custom-development": "Desarrollo a Medida",
+        "creative-dev": "Desarrollo Creativo",
+        "optimization": "Optimización Web"
+    }
+}

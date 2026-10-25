@@ -1,0 +1,49 @@
+/* .link — enlaces con variantes */
+
+.link {
+  color: var(--color-base-800);
+  font-family: var(--font-gotham);
+}
+
+.link--inline {
+  font-weight: 350; /* Gotham Book */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link--inline:hover {
+  color: var(--color-base-600);
+}
+
+.link--button {
+  margin-top: 3rem;
+  font-weight: 400;
+  font-size: var(--text-24);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--color-base-800);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.link--button:hover {
+  background-color: var(--color-base-400);
+  color: var(--color-base-100);
+  border: 2px solid var(--color-base-300);
+}
+
+.link--nav {
+  font-weight: 400;
+  font-size: var(--text-24);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+.link--nav:hover {
+  color: var(--color-base-400);
+}

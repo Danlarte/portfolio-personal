@@ -1,0 +1,32 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import ResumeDropdown from "../../elements/ResumeDropdown.astro";
+import ContainerBottom from "../../elements/ContainerBottom.astro";
+import "../../../styles/components/image-container.css";
+
+// i18n
+import { getLang, dict } from "../../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+// content
+const experience = tr.about.experience.items;
+---
+
+<Container variant={'md'}>
+    <Heading tagName="h2" tagSize="h2" class="heading--center">{tr.about.experience.heading}</Heading>
+    <div class="accordion">
+        <Container class="box">
+            {
+                experience.map((i) => (
+                    <ResumeDropdown title={i.title} place={i.place} period={i.period} text={i.text} />
+                ))
+            }
+        </Container>
+        <ContainerBottom />
+    </div>
+
+</Container>

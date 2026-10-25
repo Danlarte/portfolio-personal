@@ -1,0 +1,12 @@
+---
+// assets
+import barcode from "../../assets/ui/barcode.svg";
+import symbol from "../../assets/ui/symbolWhite.svg";
+import { Image } from "astro:assets";
+import "../../styles/components/image-container.css";
+---
+
+<div class="container-bottom">
+    <Image src={symbol} alt="UI Symbol" />
+    <Image src={barcode} alt="UI Bar Code" />
+</div>

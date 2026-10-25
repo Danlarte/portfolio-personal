@@ -1,0 +1,47 @@
+/* .image-container — marco con borde + código de barras */
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container__frame {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border: 2px solid var(--color-base-800);
+}
+
+.image-container__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.75);
+}
+
+/* .container-bottom — fila símbolo + código de barras */
+
+.container-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .box — caja con borde grueso (FAQ, Services, Education, Experience) */
+
+.box {
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 3px solid var(--color-base-800);
+}
+
+/* .accordion — lista de dropdowns + container-bottom */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

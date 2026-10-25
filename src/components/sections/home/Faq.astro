@@ -1,0 +1,32 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import ContainerBottom from "../../elements/ContainerBottom.astro";
+import Heading from "../../elements/Heading.astro";
+import Dropdown from "../../elements/Dropdown.astro";
+import "../../../styles/components/image-container.css";
+
+// i18n
+import { getLang, dict } from "../../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+// content
+const faq = tr.home.faq.items;
+---
+
+<Container variant={'md'}>
+    <Heading tagName="h2" tagSize="h2" class="heading--center">{tr.home.faq.heading}</Heading>
+    <div class="accordion">
+        <Container class="box">
+            {
+                faq.map((q, index) => (
+                    <Dropdown title=`${index + 1}. ${q.title}`  text={q.text} />
+                ))
+            }
+        </Container>
+        <ContainerBottom />
+    </div>
+
+</Container>

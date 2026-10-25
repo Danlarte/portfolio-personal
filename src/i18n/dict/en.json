@@ -1,0 +1,198 @@
+{
+    "nav": {
+        "home": "Home",
+        "works": "Works",
+        "about": "About",
+        "contact": "Contact",
+        "openNav": "Open Navigation",
+        "closeNav": "Close Navigation"
+    },
+    "footer": {
+        "socials": "Socials",
+        "navigation": "Navigation",
+        "rights": "Daniel Lazarte © 2025 All Rights Reserved",
+        "builtWith": "Built with",
+        "by": "by"
+    },
+    "common": {
+        "allWorks": "All Works",
+        "moreAboutMe": "More about me",
+        "openToWork": "Open to work",
+        "liveSite": "Live Site",
+        "previous": "Previous",
+        "next": "Next",
+        "goHome": "Go back to the homepage"
+    },
+    "home": {
+        "meta": {
+            "title": "Home",
+            "description": "Portfolio with a grunge aesthetic."
+        },
+        "hero": {
+            "label": "Portfolio",
+            "intro": "Between pixels, records and other obsessions. A visual identity inspired by music, digital and analog objects plus the graphic culture of that universe that has been with me all along.",
+            "imageAlt": "Daniel Lazarte"
+        },
+        "featured": {
+            "heading": "Featured Works"
+        },
+        "services": {
+            "heading": "Services",
+            "items": [
+                {
+                    "title": "WordPress Development",
+                    "text": "Development and customization of WordPress sites using PHP, JavaScript, custom themes, child themes, custom fields and API integrations. Experience with Elementor Pro, Astra and solutions tailored to each project's needs."
+                },
+                {
+                    "title": "WooCommerce & E-commerce",
+                    "text": "Building and customizing online stores with WooCommerce. Development of checkout interfaces, catalog organization, feature integration and user experience optimization."
+                },
+                {
+                    "title": "Front-End & Creative Development",
+                    "text": "Building responsive interfaces and interactive web experiences with HTML, CSS, JavaScript, React and Astro. Animations with GSAP and ScrollTrigger, combining visual narrative, interaction and performance."
+                },
+                {
+                    "title": "UI Design & Web Performance",
+                    "text": "Interface design focused on visual hierarchy, usability and graphic consistency. Technical diagnostics, speed optimization, maintenance and issue resolution for websites."
+                }
+            ]
+        },
+        "about": {
+            "heading": "About",
+            "p1": "I'm a WordPress developer, Front-End Developer and graphic designer with more than five years of experience building websites, online stores and digital experiences.",
+            "p2": "My work combines design and programming. I specialize in WordPress, WooCommerce, PHP and JavaScript, developing custom solutions ranging from corporate sites and e-commerce platforms to interactive interfaces with Astro, React and GSAP.",
+            "p3": "My graphic design background lets me approach every project from both a visual and a technical perspective. I enjoy understanding how each system works, solving problems and finding the balance between aesthetics, usability and performance. I'm currently looking for opportunities to contribute my experience and keep growing as part of a development team.",
+            "imageAlt": "Daniel Lazarte"
+        },
+        "faq": {
+            "heading": "FAQ",
+            "items": [
+                {
+                    "title": "What is your main specialty?",
+                    "text": "My specialty is WordPress and WooCommerce development. I work with PHP, JavaScript, custom themes, custom fields and API integrations. I also build interfaces with Astro and React, combining programming, graphic design and user experience."
+                },
+                {
+                    "title": "What professional experience do you have?",
+                    "text": "I have more than five years of experience developing websites and online stores. I've worked independently and in production environments for agencies, on projects involving WordPress, Elementor and WooCommerce, from implementation through maintenance and optimization."
+                },
+                {
+                    "title": "How do you approach a development project?",
+                    "text": "I start by understanding the project's goals, needs and requirements. From there, I define a technical solution, organize the work and build the necessary features. Throughout the process I run tests, fix issues and pay close attention to usability, performance and code quality."
+                },
+                {
+                    "title": "Can you work remotely with international teams?",
+                    "text": "Yes. I'm based in Argentina and looking for 100% remote job opportunities. I can collaborate asynchronously, document my work and coordinate schedules with teams in other countries. My first language is Spanish and I have intermediate English, especially for written communication and technical documentation."
+                },
+                {
+                    "title": "What kind of opportunities are you looking for?",
+                    "text": "I'm interested in WordPress Developer, WooCommerce Developer and Front-End Developer roles. I'm looking to join a team where I can contribute my experience in web development, maintenance and problem-solving while continuing to grow professionally and learn new technologies."
+                }
+            ]
+        }
+    },
+    "about": {
+        "meta": {
+            "title": "About",
+            "description": "Experience, education and professional profile of Daniel Lazarte."
+        },
+        "intro": {
+            "p1": "I'm interested in everything that happens when design, technology and creativity meet. I come from graphic design, I build web experiences, and I enjoy both crafting an interface and understanding what happens behind it.",
+            "p2": "Music, film, history and short stories take up a good part of my curiosity. I'm drawn to ideas that challenge the conventional, to the different ways of telling stories and to discovering new forms of expression. I also enjoy going for a run: a good way to clear my head, organize ideas and come back with a fresh perspective.",
+            "imageAlt": "Daniel Lazarte"
+        },
+        "experience": {
+            "heading": "Experience",
+            "items": [
+                {
+                    "title": "WordPress & Front-End Developer",
+                    "place": "Studio Glick",
+                    "period": "2019 - Present",
+                    "text": "I design and build websites, online stores and custom digital experiences with WordPress, WooCommerce, PHP and JavaScript. I work with custom themes, API integrations, custom fields and performance optimization. I also build interfaces with Astro, React and GSAP, combining programming, visual design and user experience."
+                },
+                {
+                    "title": "WordPress Developer",
+                    "place": "GRANT SOLUTIONS",
+                    "period": "April - August 2025",
+                    "text": "Development and implementation of websites for Spain's Kit Digital program, using WordPress Multisite and Elementor. Template adaptation, design customization, content management and publishing of sites in a high-volume production environment, following defined workflows and deadlines."
+                },
+                {
+                    "title": "Graphic Designer & Digital Creative",
+                    "place": "INDEPENDENT PROFESSIONAL",
+                    "period": "2019 - Present",
+                    "text": "Development of visual identities, graphic pieces and digital interfaces for different brands and projects. My work covers branding, art direction, UI design and visual communication, integrating aesthetic and functional criteria to build coherent digital experiences."
+                },
+                {
+                    "title": "Customer Service & B2B Support",
+                    "place": "CHASMA TOURS · TOURISM INDUSTRY",
+                    "period": "2015 - 2019",
+                    "text": "Customer service and support for travel agencies in a B2B environment. Query management, issue resolution, service coordination and request follow-up. This experience strengthened my communication, organization, problem-solving and customer service skills, which also apply to supporting digital products and platforms."
+                }
+            ]
+        },
+        "education": {
+            "heading": "Education",
+            "items": [
+                {
+                    "title": "Associate Degree in Programming",
+                    "place": "UNIVERSIDAD TECNOLÓGICA NACIONAL (UTN) · CÓRDOBA",
+                    "period": "2018 - 2020",
+                    "text": "Training in programming and software development fundamentals, including programming logic, algorithms, databases and problem solving. A technical foundation that complements my professional experience in web development and Front-End programming."
+                },
+                {
+                    "title": "Higher Technician in Graphic and Advertising Design",
+                    "place": "UNIVERSIDAD PROVINCIAL DE CÓRDOBA (UPC)",
+                    "period": "2014 - 2017",
+                    "text": "Training in visual communication, graphic design, typography, composition and brand identity. These skills are the base of my creative approach and allow me to integrate design, usability and visual communication criteria into the development of digital experiences."
+                }
+            ]
+        }
+    },
+    "contact": {
+        "meta": {
+            "title": "Contact",
+            "description": "Get in touch for projects and job opportunities."
+        },
+        "heading": "Contact",
+        "intro": {
+            "p1": "Shall we work together?",
+            "p2": "I'm interested in connecting with people and teams who enjoy creating, experimenting and solving problems through design and technology.",
+            "p3": "I'm currently open to remote job opportunities as a WordPress Developer or Front-End Developer, from Argentina."
+        },
+        "email": "Email",
+        "phone": "Phone"
+    },
+    "works": {
+        "meta": {
+            "title": "Works",
+            "description": "Selected works and projects."
+        },
+        "heading": "Works",
+        "detail": {
+            "titlePrefix": "Work",
+            "ariaLabel": "Work Details",
+            "client": "Client",
+            "category": "Category",
+            "services": "Services",
+            "year": "Year"
+        }
+    },
+    "notFound": {
+        "meta": {
+            "title": "Page Not Found",
+            "description": "The page you are looking for does not exist."
+        },
+        "heading": "Page Not Found",
+        "text": "Oops! It seems the page you are trying to access is broken or does not exist!",
+        "button": "Go back to the homepage"
+    },
+    "categories": {
+        "ui-ux-design": "UI/UX Design",
+        "web-design": "Web Design",
+        "art-direction": "Art Direction",
+        "product-design": "Product Design",
+        "branding": "Branding",
+        "custom-development": "Custom Development",
+        "creative-dev": "Creative Dev",
+        "optimization": "Web Optimization"
+    }
+}

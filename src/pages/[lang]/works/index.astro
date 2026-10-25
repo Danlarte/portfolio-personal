@@ -1,0 +1,25 @@
+---
+// layout
+import Layout from "../../../layouts/Layout.astro";
+
+// components
+import Works from "../../../components/sections/works/Works.astro";
+
+// i18n
+import { LOCALES, getLang, dict } from "../../../i18n/utils";
+
+export function getStaticPaths() {
+    return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+---
+
+<Layout
+    lang={lang}
+    title={tr.works.meta.title}
+    description={tr.works.meta.description}
+>
+    <Works />
+</Layout>

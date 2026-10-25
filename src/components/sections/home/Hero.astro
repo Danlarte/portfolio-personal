@@ -1,0 +1,50 @@
+---
+// components
+import Container from "../../elements/Container.astro"
+import Text from "../../elements/Text.astro"
+import Heading from "../../elements/Heading.astro"
+import ImageContainer from "../../elements/ImageContainer.astro"
+import Link from "../../elements/Link.astro"
+import "../../../styles/components/sections-home.css";
+
+// i18n
+import { getLang, dict, localizePath } from "../../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+// assets
+import daniel from "../../../assets/images/daniel.webp";
+import linkspt from "../../../assets/ui/linkspt.webp";
+import { Image } from "astro:assets";
+import { SPOTIFY_PLAYLIST_URL } from "../../../data/links";
+---
+
+<Container variant={"xl"} class="hero">
+    <Text variant={'md'} font="acknowledgement" class="text--38">{tr.home.hero.label}</Text>
+    <Text variant={'md'} class="text--800 hero__intro">{tr.home.hero.intro}</Text>
+    <div class="hero__row">
+        <div class="hero__info">
+
+            <Heading tagName="h1" tagSize="h1">DANIEL <br>LAZARTE</Heading>
+            <Link variant={'button'} href={localizePath(lang, "/contact")}>{tr.common.openToWork}</Link>
+        </div>
+        <a
+            class="hero__image"
+            href={SPOTIFY_PLAYLIST_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Spotify playlist"
+        >
+            <ImageContainer src={daniel} alt={tr.home.hero.imageAlt} />
+            <Image
+                src={linkspt}
+                alt=""
+                aria-hidden="true"
+                class="hero__image-collage"
+                widths={[180, 360]}
+                sizes="(max-width: 768px) 35vw, 220px"
+            />
+        </a>
+    </div>
+</Container>

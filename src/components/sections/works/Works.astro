@@ -1,0 +1,36 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import Work from "../../elements/Work.astro";
+import "../../../styles/components/sections-home.css";
+
+// i18n
+import { getLang, dict } from "../../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+// content collections
+import { getCollection } from "astro:content";
+const works = await getCollection("works", ({ data, id }) => !data.isDraft && id.startsWith(`${lang}/`));
+
+const order = ["Plutonia", "yoko-beauty", "ruaj-vajilla-antigua", "pueblo-nativo"];
+works.sort((a, b) => order.indexOf(a.data.slug) - order.indexOf(b.data.slug));
+const fourWorks = works.slice(0, 4);
+---
+
+<Container variant={'lg'}>
+    <Heading tagName="h1" tagSize="h1" class="heading--center">{tr.works.heading}</Heading>
+    <div class="works-grid works-grid--wide">
+        {fourWorks.map((work) => (
+            <Work
+                slug={work.data.slug}
+                title={work.data.title}
+                client={work.data.client}
+                category={work.data.category}
+                year={work.data.year}>
+            </Work>
+        ))}
+    </div>
+</Container>

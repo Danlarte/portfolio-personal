@@ -1,0 +1,96 @@
+---
+// Layout
+import Layout from "../../../layouts/Layout.astro";
+
+// Styling
+import "../../../styles/markdown.css";
+import "../../../styles/components/sections.css";
+
+// Components
+import Container from "../../../components/elements/Container.astro";
+import Heading from "../../../components/elements/Heading.astro";
+import Text from "../../../components/elements/Text.astro";
+import ImageContainer from "../../../components/elements/ImageContainer.astro";
+import Link from "../../../components/elements/Link.astro";
+
+// i18n
+import { LOCALES, getLang, dict, localizePath } from "../../../i18n/utils";
+
+// Routing
+import type { GetStaticPaths } from "astro";
+import { render } from "astro:content";
+import { getCollection } from "astro:content";
+export const getStaticPaths = (async () => {
+    const works = await getCollection("works", ({data}) => !data.isDraft)
+    return LOCALES.flatMap((lang) =>
+        works
+            .filter((work) => work.id.startsWith(`${lang}/`))
+            .map((work) => ({
+                params: {
+                    lang,
+                    page: work.data.slug,
+                },
+                props: {
+                    work,
+                }
+            }))
+    );
+}) satisfies GetStaticPaths;
+
+// props
+const { work } = Astro.props;
+const { Content } = await render(work);
+const { title, client, category, services, year, description, featuredImage, imageTwo, imageThree, imageFour, liveSite } = work.data;
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+const details = [
+    { heading: tr.works.detail.client, text: `${client}` },
+    { heading: tr.works.detail.category, text: `${tr.categories[category]}` },
+    { heading: tr.works.detail.services, text: `${services}` },
+    { heading: tr.works.detail.year, text: `${year}` }
+]
+---
+
+<Layout
+    lang={lang}
+    title={`${tr.works.detail.titlePrefix} - ${title}`}
+    description={description}
+>
+    <Container variant={'xl'} aria-label={tr.works.detail.ariaLabel} class="container--center">
+        <Heading tagName="h1" tagSize="h1" class="heading--center">{title}</Heading>
+        <div class="work-detail__hero">
+            <ImageContainer src={featuredImage} alt={title} />
+        </div>
+        <div class="work-detail__meta">
+            {
+                details.map((detail) => (
+                    <div class="work-detail__meta-item">
+                        <Heading tagName="h2" tagSize="h4" class="work-detail__meta-heading">{detail.heading}</Heading>
+                        <Text variant={'sm'}>{detail.text}</Text>
+                    </div>
+                ))
+            }
+        </div>
+        {liveSite && <Link variant={'button'} href={liveSite} newWindow>{tr.common.liveSite}</Link>}
+        <div class="work-detail__description">
+            <Text variant={'xl'}>{description}</Text>
+        </div>
+        <div class="work-detail__images">
+            <div>
+                <ImageContainer src={imageTwo} alt={title} />
+            </div>
+            <div>
+                <ImageContainer src={imageThree} alt={title} />
+            </div>
+        </div>
+        <article class="markdown-content work-detail__content">
+            <Content />
+        </article>
+        <div class="work-detail__footer-image">
+            <ImageContainer src={imageFour} alt={title} />
+        </div>
+        <Link variant={'button'} href={localizePath(lang, "/works")}>{tr.common.allWorks}</Link>
+    </Container>
+</Layout>

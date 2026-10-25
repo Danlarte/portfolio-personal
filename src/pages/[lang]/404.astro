@@ -1,0 +1,37 @@
+---
+// layout
+import Layout from "../../layouts/Layout.astro";
+
+// components
+import Container from "../../components/elements/Container.astro";
+import Heading from "../../components/elements/Heading.astro";
+import Text from "../../components/elements/Text.astro";
+import Link from "../../components/elements/Link.astro";
+import "../../styles/components/sections.css";
+
+// i18n
+import { LOCALES, getLang, dict, localizePath } from "../../i18n/utils";
+
+export function getStaticPaths() {
+    return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+---
+
+<Layout
+    lang={lang}
+    title={tr.notFound.meta.title}
+    description={tr.notFound.meta.description}
+    noindex
+>
+    <Container variant={'xl'} class="container--center not-found">
+        <div class="not-found__body">
+            <Heading tagName="h1" tagSize="h1">{tr.notFound.heading}</Heading>
+            <Text variant={'xl'}>{tr.notFound.text}</Text>
+        </div>
+
+        <Link variant={'button'} href={localizePath(lang, "/")}>{tr.notFound.button}</Link>
+    </Container>
+</Layout>

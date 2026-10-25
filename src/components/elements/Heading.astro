@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import "../../styles/components/heading.css";
+
+const headingSizes = {
+    h1: "heading--h1",
+    h2: "heading--h2",
+    h3: "heading--h3",
+    h4: "heading--h4",
+    h5: "heading--h5",
+    h6: "heading--h6"
+};
+
+interface Props extends HTMLAttributes<"h1"> {
+    tagName: keyof typeof headingSizes;
+    tagSize: keyof typeof headingSizes;
+};
+
+const { tagName, tagSize, class: className, ...rest } = Astro.props;
+const Tag = tagName;
+---
+
+<Tag class:list={["heading", headingSizes[tagSize], className]} {...rest}><slot /></Tag>

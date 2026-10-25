@@ -1,0 +1,49 @@
+---
+// components
+import Seo, { type Props as SEOProps } from "../../components/global/Seo.astro";
+
+// Site-wide defaults (edit these once for your whole site) 
+const SITE_NAME    = "Portfolio";
+const TITLE_TMPL   = "%s | Portfolio";
+const DEFAULT_OG   = "/og-image.png";
+const TWITTER_SITE = "@handle";
+const THEME_COLOR  = "#111111";
+const LOCALE       = "es_AR";
+
+// Layout accepts all SEO props + standard layout props
+export interface Props extends SEOProps {
+  /** Extra <head> content injected after SEO tags (optional). */
+  headSlot?: boolean;
+}
+
+const {
+  title,
+  description,
+  titleTemplate  = TITLE_TMPL,
+  siteName       = SITE_NAME,
+  ogImage        = DEFAULT_OG,
+  twitterSite    = TWITTER_SITE,
+  themeColor     = THEME_COLOR,
+  locale         = LOCALE,
+  ...seoProps
+} = Astro.props;
+---
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="sitemap" href="/sitemap-index.xml" />
+	<meta name="generator" content={Astro.generator} />
+	<Seo
+      title={title}
+      description={description}
+      titleTemplate={titleTemplate}
+      siteName={siteName}
+      ogImage={ogImage}
+      twitterSite={twitterSite}
+      themeColor={themeColor}
+      locale={locale}
+      {...seoProps}
+    />
+</head>
+

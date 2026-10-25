@@ -1,0 +1,97 @@
+---
+// components
+import Link from "../elements/Link.astro";
+import LangSwitcher from "../elements/LangSwitcher.astro";
+import "../../styles/components/navigation.css";
+
+// i18n
+import { getLang, dict, localizePath } from "../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+// links
+const navLinks = [
+    { key: "home", path: "/" },
+    { key: "works", path: "/works" },
+    { key: "about", path: "/about" },
+    { key: "contact", path: "/contact" }
+] as const;
+---
+
+<nav class="nav">
+    <!-- Desktop Nav -->
+    <ul class="nav__list">
+        {
+            navLinks.map((link) => (
+                <li>
+                    <Link href={localizePath(lang, link.path)} variant={'nav'}>{tr.nav[link.key]}</Link>
+                </li>
+            ))
+        }
+    </ul>
+    <LangSwitcher />
+    <!-- Mobile Nav -->
+    <div class="nav__toggle-wrap">
+        <button class="nav__toggle" id="open-nav" aria-label={tr.nav.openNav}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="#ffffff" d="m9.5 16.5l7-4.5l-7-4.5v9ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z"/></svg>
+        </button>
+        <div class="nav__mobile" id="mobile-nav">
+            <div class="nav__mobile-inner">
+                <button id="close-nav" class="nav__close" aria-label={tr.nav.closeNav}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="#ffffff" d="M9 16h2V8H9v8Zm4 0h2V8h-2v8Zm-1 6q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z"/></svg>
+                </button>
+                <ul class="nav__mobile-list">
+                    {
+                        navLinks.map((link) => (
+                            <li><Link href={localizePath(lang, link.path)} variant={'nav'}>{tr.nav[link.key]}</Link></li>
+                        ))
+                    }
+                </ul>
+                <LangSwitcher class="nav__mobile-lang" />
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const nav = document.querySelector('.nav');
+    const openBtn = document.querySelector('#open-nav') as HTMLButtonElement;
+    const closeBtn = document.querySelector('#close-nav') as HTMLButtonElement;
+
+    openBtn.addEventListener("click", () => {
+        nav?.classList.add('nav--open');
+    })
+
+    closeBtn.addEventListener("click", () => {
+        nav?.classList.remove('nav--open');
+    })
+
+    // auto-hide: oculta el nav al bajar el scroll, lo muestra al subir
+    let lastY = window.scrollY;
+    let ticking = false;
+
+    const TOP_THRESHOLD = 80; // px — se ignora el movimiento pegado al tope
+
+    const onScroll = () => {
+        const y = window.scrollY;
+        if (!nav?.classList.contains('nav--open')) {
+            if (y > lastY && y > TOP_THRESHOLD) {
+                nav?.classList.add('nav--hidden');
+            } else if (y < lastY) {
+                nav?.classList.remove('nav--hidden');
+            }
+        }
+        lastY = y;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                onScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+</script>

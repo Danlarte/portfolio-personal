@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import "../../styles/components/link.css";
+
+interface Props extends HTMLAttributes<"a"> {
+    href: string;
+    variant: "inline" | "button" | "nav";
+    newWindow?: boolean;
+}
+
+const { href, variant, newWindow = false, class: className, ...rest } = Astro.props;
+---
+
+<a
+    href={href}
+    class:list={["link", `link--${variant}`, className]}
+    target={newWindow ? "_blank" : undefined}
+    rel={newWindow ? "noopener noreferrer" : undefined}
+    {...rest}
+>
+    <slot />
+</a>

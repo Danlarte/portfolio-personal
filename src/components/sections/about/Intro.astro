@@ -1,0 +1,30 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import Text from "../../elements/Text.astro";
+import ImageContainer from "../../elements/ImageContainer.astro";
+import "../../../styles/components/sections.css";
+
+// i18n
+import { getLang, dict } from "../../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+// assets
+import daniel from "../../../assets/images/daniel.webp";
+---
+
+<Container variant={'xl'}>
+    <Heading tagName="h1" tagSize="h1" class="heading--center">Daniel Lazarte</Heading>
+    <div class="intro__row">
+        <div class="intro__text">
+            <Text variant={'xl'}>{tr.about.intro.p1}</Text>
+            <Text variant={'sm'}>{tr.about.intro.p2}</Text>
+        </div>
+        <div class="intro__media">
+            <ImageContainer src={daniel} alt={tr.about.intro.imageAlt}/>
+        </div>
+    </div>
+</Container>

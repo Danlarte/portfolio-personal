@@ -1,0 +1,39 @@
+---
+// components
+import Text from "../elements/Text.astro";
+import "../../styles/components/dropdown.css";
+
+// props
+const { title, text } = Astro.props;
+---
+
+<div class="dropdown">
+    <button class="dropdown__trigger">
+        <Text variant={'xl'} class="text--hover">{title}</Text>
+        <svg
+          class="dropdown__icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 8 8">
+            <path fill="#ffffff" d="M1.5 1L0 2.5l4 4l4-4L6.5 1L4 3.5L1.5 1z"/>
+        </svg>
+    </button>
+    <div class="dropdown__content">
+        <Text variant={'sm'}>{text}</Text>
+    </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+      const trigger = dropdown.querySelector('.dropdown__trigger');
+
+      trigger?.addEventListener('click', () => {
+        dropdown.classList.toggle('dropdown--open');
+      });
+    });
+  });
+</script>

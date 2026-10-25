@@ -1,0 +1,32 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import Dropdown from "../../elements/Dropdown.astro";
+import ContainerBottom from "../../elements/ContainerBottom.astro";
+import "../../../styles/components/image-container.css";
+
+// i18n
+import { getLang, dict } from "../../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+// content
+const services = tr.home.services.items;
+---
+
+<Container variant={'md'}>
+    <Heading tagName="h2" tagSize="h2" class="heading--center heading--acknowledgement">{tr.home.services.heading}</Heading>
+    <div class="accordion">
+        <Container class="box">
+            {
+                services.map((service, index) => (
+                    <Dropdown title=`${index + 1}. ${service.title}` text={service.text} />
+                ))
+            }
+        </Container>
+        <ContainerBottom />
+    </div>
+
+</Container>

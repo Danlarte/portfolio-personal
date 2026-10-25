@@ -1,0 +1,65 @@
+---
+// assets
+import { Image } from "astro:assets";
+import symbol from "../../assets/ui/symbol.svg";
+import cd1 from "../../assets/work-card/cd1.webp";
+import cdYoko from "../../assets/work-card/cd-yoko.webp";
+import cdRuaj from "../../assets/work-card/cd_ruaj.webp";
+import cdPn from "../../assets/work-card/cd-pn.webp";
+import cdPbg from "../../assets/work-card/cd-pbg.webp";
+import cdYokoBg from "../../assets/work-card/cd-yokobg.webp";
+import ruajBg from "../../assets/work-card/ruaj-bg.webp";
+import cdPnBg from "../../assets/work-card/cd-pnbg.webp";
+import bgds from "../../assets/work-card/bg.webp";
+import { getImage } from "astro:assets";
+
+const cardImagesBySlug = {
+    "Plutonia": cd1,
+    "yoko-beauty": cdYoko,
+    "ruaj-vajilla-antigua": cdRuaj,
+    "pueblo-nativo": cdPn,
+};
+
+const diskImagesBySlug = {
+    "Plutonia": cdPbg,
+    "yoko-beauty": cdYokoBg,
+    "ruaj-vajilla-antigua": ruajBg,
+    "pueblo-nativo": cdPnBg,
+};
+const vinylTexture = await getImage({src: bgds, format:"jpg"})
+
+// components
+import Text from "../elements/Text.astro";
+import Heading from "../elements/Heading.astro";
+import "../../styles/components/work.css";
+
+// i18n
+import { getLang, dict, localizePath } from "../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+// props
+const { slug, title, client, category, year } = Astro.props;
+const cardImage = cardImagesBySlug[slug as keyof typeof cardImagesBySlug] ?? cd1;
+const diskImage = diskImagesBySlug[slug as keyof typeof diskImagesBySlug];
+const categoryLabel = tr.categories[category as keyof typeof tr.categories];
+---
+
+<div class="work">
+    <a href={localizePath(lang, `/works/${slug}`)} class="work__link">
+        <div class="work__media">
+            <div class="work__badge">
+                <Text variant={'lg'} class="text--light">{year}</Text>
+                <Image src={symbol} alt="UI Symbol" width={30} loading="lazy"/>
+            </div>
+
+            <Image src={cardImage} alt={title} class="work__image" loading="lazy" width={400}/>
+            <div class="work__disk-wrap">
+                <div style=`background-image: url(${diskImage.src})` class="work__disk"></div>
+            </div>
+        </div>
+        <Heading tagName="h3" tagSize="h4" class="work__title">{title}</Heading>
+        <Text variant={'md'}>{categoryLabel}</Text>
+    </a>
+</div>

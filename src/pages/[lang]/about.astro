@@ -1,0 +1,29 @@
+---
+// layout
+import Layout from "../../layouts/Layout.astro";
+
+// components
+import Intro from "../../components/sections/about/Intro.astro";
+import Experience from "../../components/sections/about/Experience.astro";
+import Education from "../../components/sections/about/Education.astro";
+
+// i18n
+import { LOCALES, getLang, dict } from "../../i18n/utils";
+
+export function getStaticPaths() {
+    return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+---
+
+<Layout
+    lang={lang}
+    title={tr.about.meta.title}
+    description={tr.about.meta.description}
+>
+    <Intro />
+    <Experience />
+    <Education />
+</Layout>

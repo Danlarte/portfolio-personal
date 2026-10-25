@@ -1,0 +1,23 @@
+---
+// assets
+import { Image } from "astro:assets";
+import symbol from "../../../assets/ui/symbolWhite.svg";
+
+// components
+import Text from "../../elements/Text.astro";
+import "../../../styles/components/sections.css";
+
+// props
+const { title, contact } = Astro.props;
+---
+
+<div class="contact-item">
+    <div class="contact-item__head">
+        <Text variant={'lg'}>{title}</Text>
+        <Image src={symbol} alt="UI Symbol" />
+    </div>
+    <div class="contact-item__divider"></div>
+    <div>
+        <Text variant={'sm'}>{contact}</Text>
+    </div>
+</div>

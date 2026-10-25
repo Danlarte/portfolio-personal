@@ -1,0 +1,64 @@
+/* .text — párrafos y texto (Gotham por defecto) */
+
+.text {
+  font-family: var(--font-gotham);
+}
+
+.text--xsm {
+  font-size: var(--text-12);
+  font-weight: 400;
+}
+
+.text--sm {
+  font-size: var(--text-16);
+  line-height: 2; /* text-16/8 */
+  font-weight: 400;
+}
+
+.text--md {
+  font-size: var(--text-20);
+  font-weight: 350; /* Gotham Book */
+  text-transform: uppercase;
+  color: var(--color-base-700);
+}
+
+.text--lg {
+  font-size: var(--text-32);
+  line-height: 2rem; /* text-32/8 */
+  font-weight: 400;
+}
+
+.text--xl {
+  font-size: var(--text-25);
+  font-weight: 350; /* Gotham Book */
+}
+
+/* modifiers */
+
+.text--acknowledgement {
+  font-family: var(--font-acknowledgement);
+}
+
+.text--38 {
+  font-size: var(--text-38);
+}
+
+.text--800 {
+  color: var(--color-base-800);
+}
+
+.text--light {
+  color: var(--color-base-100);
+}
+
+.text--muted {
+  color: var(--color-base-700);
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--hover:hover {
+  color: var(--color-base-700);
+}

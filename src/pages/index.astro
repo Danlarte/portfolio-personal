@@ -1,0 +1,27 @@
+---
+// Root page: detects the visitor language (cookie first, then browser language)
+// and forwards to the localized home. Content pages live under /es/ and /en/.
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="noindex" />
+		<title>Daniel Lazarte</title>
+		<script is:inline>
+			(function () {
+				var override = new URLSearchParams(location.search).get("lang");
+				var match = document.cookie.match(/(?:^|;\s*)lang=([^;]+)/);
+				var stored = match ? decodeURIComponent(match[1]) : null;
+				var nav = (navigator.language || "es").toLowerCase();
+				var lang = override || stored || (nav.indexOf("en") === 0 ? "en" : "es");
+				if (lang !== "es" && lang !== "en") lang = "es";
+				location.replace("/" + lang + "/");
+			})();
+		</script>
+		<noscript><meta http-equiv="refresh" content="0;url=/es/" /></noscript>
+	</head>
+	<body></body>
+</html>

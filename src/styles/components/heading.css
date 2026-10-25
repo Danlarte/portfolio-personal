@@ -1,0 +1,62 @@
+/* .heading — tipografía de encabezados (Gotham 400) */
+
+.heading {
+  font-family: var(--font-gotham);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-base-800);
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.heading--h1 {
+  font-size: var(--text-20);
+}
+
+.heading--h2 {
+  font-size: var(--text-16);
+}
+
+.heading--h3,
+.heading--h4,
+.heading--h5,
+.heading--h6 {
+  font-size: var(--text-16);
+}
+
+@media (min-width: 768px) {
+  .heading--h1 {
+    font-size: var(--text-24);
+  }
+
+  .heading--h2 {
+    font-size: var(--text-20);
+  }
+}
+
+@media (min-width: 1200px) {
+  .heading--h1 {
+    font-size: var(--text-128); /* 8rem */
+  }
+
+  .heading--h2 {
+    font-size: var(--text-24);
+  }
+
+  .heading--h3 {
+    font-size: var(--text-20);
+  }
+}
+
+.heading--center {
+  text-align: center;
+}
+
+.heading--acknowledgement {
+  font-family: var(--font-acknowledgement);
+  font-size: var(--text-64); /* 4rem */
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 3rem;
+  color: var(--color-base-800);
+}

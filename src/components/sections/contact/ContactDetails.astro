@@ -1,0 +1,18 @@
+---
+// components
+import Container from "../../elements/Container.astro"
+import ContactItem from "./ContactItem.astro"
+import "../../../styles/components/sections.css";
+
+// i18n
+import { getLang, dict } from "../../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+---
+<Container variant={'md'}>
+    <div class="contact-details">
+        <ContactItem title={tr.contact.email} contact="danlartedev@gmail.com" />
+        <ContactItem title={tr.contact.phone} contact="(0549) 3815090605" />
+    </div>
+</Container>

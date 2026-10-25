@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import "../../styles/components/text.css";
+
+interface Props extends HTMLAttributes<"p"> {
+    variant?: "xsm" | "sm" | "md" | "lg" | "xl"
+    font?: "gotham" | "acknowledgement"
+}
+
+const { variant = "sm", font = "gotham", class: className, ...rest } = Astro.props;
+---
+
+<p
+    class:list={[
+        "text",
+        `text--${variant}`,
+        font === "acknowledgement" && "text--acknowledgement",
+        className
+    ]}
+    {...rest}
+><slot /></p>

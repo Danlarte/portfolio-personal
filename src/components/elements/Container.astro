@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import "../../styles/components/container.css";
+
+interface Props extends HTMLAttributes<"section"> {
+    variant?: "full" | "xl" | "lg" | "md"
+}
+
+const { variant = "full", class: className, ...rest } = Astro.props;
+const variantClass = variant !== "full" ? `container--${variant}` : "";
+---
+
+<section class:list={["container", variantClass, className]} {...rest}>
+    <slot />
+</section>

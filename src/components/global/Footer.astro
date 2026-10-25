@@ -1,0 +1,61 @@
+---
+// components
+import Container from "../elements/Container.astro";
+import Heading from "../elements/Heading.astro";
+import Text from "../elements/Text.astro";
+import Link from "../elements/Link.astro";
+import LangSwitcher from "../elements/LangSwitcher.astro";
+import "../../styles/components/footer.css";
+
+// i18n
+import { getLang, dict, localizePath } from "../../i18n/utils";
+import { SPOTIFY_PLAYLIST_URL, LINKEDIN_URL } from "../../data/links";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+
+// links
+const socials = [
+    { title: "Linkedin", href: LINKEDIN_URL },
+    { title: "Spotify", href: SPOTIFY_PLAYLIST_URL },
+
+];
+
+const navigation = [
+    { key: "home", path: "/" },
+    { key: "works", path: "/works" },
+    { key: "about", path: "/about" },
+    { key: "contact", path: "/contact" }
+] as const;
+---
+
+<footer class="footer">
+    <Container variant={'xl'}>
+        <div class="footer__columns">
+            <div class="footer__col">
+                <Heading tagName="h3" tagSize="h4" class="footer__heading">{tr.footer.socials}</Heading>
+                <ul>
+                    {
+                        socials.map((social) => (
+                            <li><Link variant={'nav'} href={social.href} newWindow>{social.title}</Link></li>
+                        ))
+                    }
+                </ul>
+            </div>
+            <div class="footer__col footer__col--right">
+                <Heading tagName="h3" tagSize="h4" class="footer__heading">{tr.footer.navigation}</Heading>
+                <ul>
+                    {
+                        navigation.map((navLink) => (
+                            <li><Link variant={'nav'} href={localizePath(lang, navLink.path)}>{tr.nav[navLink.key]}</Link></li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="footer__meta">
+            <Text variant={'sm'}>{tr.footer.rights}</Text>
+            <LangSwitcher class="footer__lang" />
+        </div>
+    </Container>
+</footer>

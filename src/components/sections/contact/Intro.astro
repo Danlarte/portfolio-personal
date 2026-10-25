@@ -1,0 +1,22 @@
+---
+// components
+import Heading from "../../elements/Heading.astro";
+import Container from "../../elements/Container.astro";
+import Text from "../../elements/Text.astro";
+import "../../../styles/components/sections.css";
+
+// i18n
+import { getLang, dict } from "../../../i18n/utils";
+
+const lang = getLang(Astro.url.pathname);
+const tr = dict(lang);
+---
+
+<Container variant={'xl'} class="contact-intro">
+    <Heading tagName="h1" tagSize="h1">{tr.contact.heading}</Heading>
+    <div class="contact-intro__body">
+        <Text variant={'xl'}>{tr.contact.intro.p1}</Text>
+        <Text variant={'sm'}>{tr.contact.intro.p2}</Text>
+        <Text variant={'sm'}><strong>{tr.contact.intro.p3}</strong></Text>
+    </div>
+</Container>

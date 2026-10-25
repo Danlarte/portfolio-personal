@@ -1,0 +1,50 @@
+/* .dropdown — acordeón simple (FAQ, Services, Resume) */
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dropdown__trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown__icon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.dropdown__content {
+  display: none;
+  overflow: hidden;
+}
+
+.dropdown--open .dropdown__content {
+  display: block;
+}
+
+.dropdown--open .dropdown__icon {
+  transform: rotate(180deg);
+}
+
+/* .resume-dropdown — variante con título + lugar + periodo */
+
+.resume-dropdown__trigger {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+}
+
+.resume-dropdown__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
