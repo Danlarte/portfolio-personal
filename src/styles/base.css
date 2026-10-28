@@ -140,6 +140,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  background-color: #262626;
 }
 
 body {
@@ -148,11 +149,21 @@ body {
   font-weight: 400;
   color: var(--color-base-800);
   line-height: 1.5;
+  background-color: #262626;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
+}
+
+/* En móvil no cargamos la imagen de fondo: fondo sólido para evitar
+   el flash blanco al hacer scroll y mejorar el rendimiento. */
+@media (max-width: 767px) {
+  body {
+    background-image: none !important;
+    background-attachment: scroll;
+  }
 }
 
 img,

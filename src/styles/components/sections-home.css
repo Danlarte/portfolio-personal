@@ -46,8 +46,8 @@
 }
 
 .hero__cv-link {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
+  font-family: var(--font-gotham);
+  font-size: var(--text-16);
   color: var(--color-base-800);
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -55,7 +55,7 @@
 }
 
 .hero__cv-link:hover {
-  color: var(--color-primary);
+  color: var(--color-base-400);
   opacity: 0.8;
 }
 
@@ -154,7 +154,7 @@
 /* .works-grid — grilla 2 columnas de tarjetas */
 
 .works-grid {
-  display: column;
+  display: grid;
   grid-template-columns: 1fr;
   gap: 4rem; /* gap-16 */
   margin-left: 0%;

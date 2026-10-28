@@ -60,3 +60,12 @@
   margin-bottom: 3rem;
   color: var(--color-base-800);
 }
+
+/* En español los h2 del home son más largos: en móvil reducimos el tamaño
+   para que no desborden ni se vean desproporcionados. */
+@media (max-width: 767px) {
+  html[lang="es"] .heading--h2.heading--acknowledgement {
+    font-size: var(--text-32); /* 2rem */
+    line-height: 1.15;
+  }
+}
