@@ -3,14 +3,15 @@
 .nav {
   position: fixed;
   top: 0;
-  right: 1.5rem;
-  left: 1.5rem;
+  right: 0;
+  left: 0;
   z-index: 40;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
   padding-block: 1.25rem;
+  padding-inline: 2rem;
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -184,9 +185,9 @@
 /* Tablet: 768px - 1024px */
 @media (min-width: 768px) {
   .nav {
+    justify-content: flex-end;
     padding-block: 1.5rem;
-    left: 2rem;
-    right: 2rem;
+    padding-inline: 2rem;
   }
 
   .nav__list {
@@ -202,9 +203,8 @@
 /* Desktop: 1024px+ */
 @media (min-width: 1024px) {
   .nav {
-    left: 4rem;
-    right: 4rem;
     padding-block: 2rem;
+    padding-inline: 4rem;
   }
 
   .nav__list {
@@ -215,7 +215,6 @@
 /* Large desktop: 1440px+ */
 @media (min-width: 1440px) {
   .nav {
-    left: 6rem;
-    right: 6rem;
+    padding-inline: 6rem;
   }
 }
