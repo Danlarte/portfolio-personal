@@ -46,6 +46,14 @@
   --text-12: 0.75rem;
 }
 
+/* En móvil, todas las fuentes usan Gotham:
+   la Acknowledgement no se muestra correctamente en esos dispositivos. */
+@media (max-width: 767px) {
+  :root {
+    --font-acknowledgement: var(--font-gotham);
+  }
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
