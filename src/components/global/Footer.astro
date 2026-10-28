@@ -16,9 +16,14 @@ const tr = dict(lang);
 
 // links
 const socials = [
-    { title: "Linkedin", href: LINKEDIN_URL },
-    { title: "Spotify", href: SPOTIFY_PLAYLIST_URL },
-
+    { title: "Linkedin", href: LINKEDIN_URL, external: true },
+    { title: "Spotify", href: SPOTIFY_PLAYLIST_URL, external: true },
+    { 
+        title: tr.common.downloadCV, 
+        href: lang === 'en' ? '/cv/Daniel_Lazarte_CV_EN.pdf' : '/cv/Daniel_Lazarte_CV_ES.pdf',
+        download: lang === 'en' ? 'Daniel_Lazarte_CV_EN.pdf' : 'Daniel_Lazarte_CV_ES.pdf',
+        external: false 
+    },
 ];
 
 const navigation = [
@@ -37,7 +42,17 @@ const navigation = [
                 <ul>
                     {
                         socials.map((social) => (
-                            <li><Link variant={'nav'} href={social.href} newWindow>{social.title}</Link></li>
+                            <li>
+                                {social.external ? (
+                                    <Link variant={'nav'} href={social.href} newWindow>{social.title}</Link>
+                                ) : (
+                                    <a 
+                                        class="link link--nav" 
+                                        href={social.href} 
+                                        download={social.download}
+                                    >{social.title}</a>
+                                )}
+                            </li>
                         ))
                     }
                 </ul>

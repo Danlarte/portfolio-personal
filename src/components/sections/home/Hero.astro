@@ -28,6 +28,11 @@ import { SPOTIFY_PLAYLIST_URL } from "../../../data/links";
 
             <Heading tagName="h1" tagSize="h1">DANIEL <br>LAZARTE</Heading>
             <Link variant={'button'} href={localizePath(lang, "/contact")}>{tr.common.openToWork}</Link>
+            <a
+                class="hero__cv-link"
+                href={lang === 'en' ? '/cv/Daniel_Lazarte_CV_EN.pdf' : '/cv/Daniel_Lazarte_CV_ES.pdf'}
+                download={lang === 'en' ? 'Daniel_Lazarte_CV_EN.pdf' : 'Daniel_Lazarte_CV_ES.pdf'}
+            >{tr.common.downloadCV}</a>
         </div>
         <a
             class="hero__image"

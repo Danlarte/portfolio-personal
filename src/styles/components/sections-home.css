@@ -45,6 +45,20 @@
   gap: 1rem; /* gap-4 */
 }
 
+.hero__cv-link {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-base-800);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.hero__cv-link:hover {
+  color: var(--color-primary);
+  opacity: 0.8;
+}
+
 @media (min-width: 768px) {
   .hero__info {
     flex: 2; /* md:flex-2 */

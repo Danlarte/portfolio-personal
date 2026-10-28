@@ -7,14 +7,23 @@
 :root {
   /* colors */
   --color-base-100: oklch(14% 0.004 49.25);
+  --color-base-100-rgb: 36, 36, 36;
   --color-base-200: oklch(21% 0.006 56.043);
+  --color-base-200-rgb: 54, 54, 54;
   --color-base-300: oklch(26% 0.007 34.298);
+  --color-base-300-rgb: 67, 67, 67;
   --color-base-400: #BEE731;
+  --color-base-400-rgb: 190, 231, 49;
   --color-base-500: #FF6542;
+  --color-base-500-rgb: 255, 101, 66;
   --color-base-600: oklch(55% 0.013 58.071);
+  --color-base-600-rgb: 140, 140, 134;
   --color-base-700: oklch(70% 0.01 56.259);
+  --color-base-700-rgb: 179, 179, 173;
   --color-base-800: #E2E2D6;
+  --color-base-800-rgb: 226, 226, 214;
   --color-base-900: oklch(98% 0.001 106.423);
+  --color-base-900-rgb: 250, 250, 249;
 
   /* fonts */
   --font-gotham: "Gotham", system-ui, sans-serif;
