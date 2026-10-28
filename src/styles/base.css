@@ -150,6 +150,7 @@ body {
   color: var(--color-base-800);
   line-height: 1.5;
   background-color: #262626;
+  background-image: var(--bg-desktop, none);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -157,11 +158,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* En móvil no cargamos la imagen de fondo: fondo sólido para evitar
-   el flash blanco al hacer scroll y mejorar el rendimiento. */
+/* En móvil usamos una imagen vertical más ligera y sin attachment fixed,
+   para evitar el flash blanco al hacer scroll y mejorar el rendimiento. */
 @media (max-width: 767px) {
   body {
-    background-image: none !important;
+    background-image: var(--bg-mobile, none);
     background-attachment: scroll;
   }
 }

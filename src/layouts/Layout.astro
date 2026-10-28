@@ -13,8 +13,10 @@ import { DEFAULT_LANG, LOCALE_META, type Lang } from "../i18n/utils";
 
 // assets
 import bg from "../assets/images/bg-1.webp";
+import bgMobile from "../content/images/bg-movil.webp";
 import { getImage } from "astro:assets";
 const backgroundImage = await getImage({src: bg, format:'jpg'})
+const backgroundImageMobile = await getImage({src: bgMobile, format:'webp'})
 
 // props
 const {title, description, titleTemplate, siteName, ogImage, twitterSite, themeColor, lang = DEFAULT_LANG, locale, ...seoProps } = Astro.props;
@@ -34,7 +36,7 @@ const ogLocale = locale ?? LOCALE_META[lang as Lang].ogLocale;
       	locale={ogLocale}
       	{...seoProps}
 	/>
-	<body style=`background-image: url(${backgroundImage.src})`>
+	<body style=`--bg-desktop: url(${backgroundImage.src}); --bg-mobile: url(${backgroundImageMobile.src})`>
 		<!-- Background noise effect -->
 		<div class="noise"></div>
 		<!-- Wrapper component to make sure all content on the website is above the noise filter background -->
