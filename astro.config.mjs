@@ -11,7 +11,7 @@ export default defineConfig({
       serialize: (item) => (/\/404\/?$/.test(item.url) ? undefined : item),
     }),
   ],
-  site: "https://grunge.pages.dev",
+  site: "https://daniel-lazarte.pages.dev",
   i18n: {
     locales: ["es", "en"],
     defaultLocale: "es",
